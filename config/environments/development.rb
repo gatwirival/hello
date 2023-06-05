@@ -60,7 +60,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.middleware.use Rack::MiniProfiler
-  Rack::MiniProfiler.config.position = 'bottom-left'
+  Rack::MiniProfiler.config.position = 'top-left'
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
