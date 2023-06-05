@@ -1,0 +1,23 @@
+# .circleci/config.yml
+
+version: 2
+jobs:
+  build:
+    working_directory: ~/app
+    docker:
+      - image: circleci/ruby:2.6.5
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - run:
+          name: Install Dependencies
+          command: |
+            gem install bundler
+            bundle install
+            cd railsreact
+            npm install
+      - run:
+          name: Run Tests
+          command: |
+            bundle exec rspec
+        
