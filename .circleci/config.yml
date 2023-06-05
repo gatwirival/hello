@@ -14,7 +14,7 @@ jobs:
           command: |
             gem install bundler
             bundle install
-            cd railsreact
+            cd hello
             npm install
       - run:
           name: Run Tests
