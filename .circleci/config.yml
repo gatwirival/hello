@@ -1,20 +1,18 @@
-# .circleci/config.yml
-
-version: 2
-jobs:
-  build:
-    working_directory: ~/app
-    docker:
-      - image: cimg/ruby:2.7.0
-    steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: |
-            gem install bundler
-            bundle instal
-      - run:
-          name: Run Tests
-          command: |
-            bundle exec rspec
-        
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy-staging:
+          requires:
+            - build
+          filters:
+            branches:
+              only: develop
+          steps:
+            - run: |
+                gem install bundler
+                bundle install
+                heroku login -i
+                heroku git:remote -a your-staging-app
+                git push heroku $CIRCLE_SHA1:master
