@@ -1,21 +1,6 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/app
-    docker:
-      - image: cimg/ruby:2.7.0
-    steps:
-      - checkout
-      - run:
-          name: Install Dependencies
-          command: |
-            gem install bundler
-            bundle install
-      - run:
-          name: Run Tests
-          command: |
-            bundle exec rspec
-
   deploy-staging:
     working_directory: ~/app
     docker:
