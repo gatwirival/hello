@@ -10,15 +10,11 @@ build-deploy:
             only: develop
         steps:
           - run: |
-              # Install dependencies
               gem install bundler
               bundle install
 
-              # Log in to Heroku
               heroku login -i
 
-              # Set remote for staging app
               heroku git:remote -a your-staging-app
 
-              # Deploy to staging
               git push heroku $CIRCLE_SHA1:master
