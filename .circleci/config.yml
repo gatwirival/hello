@@ -17,4 +17,10 @@ jobs:
           name: Run Tests
           command: |
             bundle exec rspec
+        - run:
+          name: Deploy
+          command: |
+            heroku login -i
+            heroku git:remote -a your-staging-app
+            git push heroku $CIRCLE_SHA1:master
         
