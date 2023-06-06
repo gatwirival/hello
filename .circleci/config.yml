@@ -12,8 +12,7 @@ jobs:
           name: Install Dependencies
           command: |
             gem install bundler
-            bundle install
-            cd hello
+            bundle instal
             npm install
       - run:
           name: Run Tests
