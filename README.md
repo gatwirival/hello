@@ -23,10 +23,10 @@ Things you may want to cover:
 
 * ...
 ```jsx
-import { Box } from "@prismane/core";
+   import { Box } from "@prismane/core";
 
-const Page = () => {
-  return (
+    const Page = () => {
+    return (
     <>
       <Box bg="diamond">Hello, world</Box> // Prismane Color
       <Box bg="primary">Hello, world</Box> // Theme Color
@@ -35,9 +35,9 @@ const Page = () => {
       </Box>
       <Box bg={["primary", { hover: "base" }]}>Hello, world</Box> // Pseudo Class
       <Box bg="#ffffff">Hello, world</Box> // Custom Color
-    </>
-  );
-};
+      </>
+    );
+    };
 
-export default Page;
+   export default Page;
 ```
