@@ -22,7 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-  ```jsx
+```jsx
 import { Box } from "@prismane/core";
 
 const Page = () => {
@@ -40,5 +40,4 @@ const Page = () => {
 };
 
 export default Page;
-
-  ```
+```
