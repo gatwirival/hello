@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
   ```jsx
-  import { Box } from "@prismane/core";
+import { Box } from "@prismane/core";
 
 const Page = () => {
   return (
